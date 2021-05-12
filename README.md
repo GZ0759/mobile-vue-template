@@ -1,24 +1,12 @@
-# m-template-px2rem
+# 移动端 Vue 项目 px 单位适配
 
-## Project setup
+## Compiles and hot-reloads for development
+
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Customize configuration
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

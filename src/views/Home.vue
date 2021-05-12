@@ -16,3 +16,15 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.home {
+  width: 200px;
+  margin-left: 75px;
+  font-size: 18px;
+  img {
+    width: 160px;
+    height: 100px;
+    margin: 0 auto;
+  }
+}
+</style>
