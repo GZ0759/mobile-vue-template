@@ -93,7 +93,7 @@ module.exports = {
 > 你可以通过 .postcssrc 或任何 postcss-load-config 支持的配置源来配置 PostCSS。也可以通过 vue.config.js 中的 css.loaderOptions.postcss 配置 postcss-loader。
 > [Vue CLI 原文](https://cli.vuejs.org/zh/guide/css.html#postcss)
 
-第一种配置：*.postcssrc*文件
+第一种配置：`.postcssrc`文件
 
 ```js
 module.exports = {
@@ -116,7 +116,7 @@ module.exports = {
 };
 ```
 
-第二种配置：*vue.config.js*文件
+第二种配置：`vue.config.js`文件
 
 ```js
 module.exports = {
@@ -150,7 +150,7 @@ module.exports = {
 
 ### 3. 手动实现方案
 
-既然知道了前面的原理，那么就不用插件手动写简单版本的适配方案。下面以设计稿为 750px 为依据。
+既然知道了前面的原理，那么就可以不借助插件，手动写简单版本的适配方案。下面以设计稿为 750px 为依据。
 
 ```scss
 @function px2vw($val) {
@@ -161,11 +161,11 @@ html {
 }
 ```
 
-上面利用了 sass 的自定义函数（Function Directives）方便理解，函数 px2vw 将任意 px 单位转化为相对单位 vw。因此，我们可以将 html 的字体大小设置为 `px2vw(100)`，意思是在文档子元素中，每单位 rem 代表 100px。
+上面利用了 sass 的自定义函数（Function Directives），函数 px2vw 将任意 px 单位转化为相对单位 vw。因此，我们可以将 html 的字体大小设置为 `px2vw(100)`，意思是在文档子元素中，每单位 rem 代表 100px。
 
-举个例子，假如我们的设计稿有宽 200px 高 140px 的元素，那么我们只要设置 `width: 2rem` 和 `height: 1.4rem` 即可。
+举个例子，假如我们的设计稿有宽 200px 高 140px 的元素，那么我们只要设置 `width: 2rem` 和 `height: 1.4rem` 即可，就能达到适配屏幕的目的了。
 
-可能随着屏幕的放大，字体也会跟着放大，我们希望有一个最小字体和最大字体，那么就可以添加媒体查询。
+值得注意的是，可能随着屏幕的放大，字体也会跟着放大，我们希望有一个最小字体和最大字体，那么就可以添加媒体查询。
 
 ```scss
 @function px2vw($val) {
@@ -182,4 +182,4 @@ html {
 }
 ```
 
-缺点，在开发设计时还是有一个 px 到 rem 的换算过程，除非用上面说到的编辑器插件或者 CSS 处理器。
+方案的缺点，在开发设计时还是有一个 px 到 rem 的换算过程，除非用上面说到的编辑器插件或者 CSS 处理器。
